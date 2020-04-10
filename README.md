@@ -10,9 +10,9 @@ and say "Hey, Sara!"
 
 Requirements:
 
+
 PyAudio
 
----
 PyAudio and python3+ is unsupported by default with ```pip install pyaudio```.
 
 So need to run next:
@@ -22,6 +22,20 @@ So need to run next:
 and then:
 
 ```pip install PyAudio```
+
+---
+
+Plasysound
+
+If you faced with error ```Import Error: No module gi```
+
+run next command:
+
+```sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0```
+
+and 
+
+``` pip install pycairo pygobject```
 
 ---
 
