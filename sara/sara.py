@@ -3,10 +3,10 @@
 import speech_recognition as sr
 from playsound import playsound
 
-from constants import Melody, Phrase
+from sara.constants import Melody, Phrase
 from procedures.registry import ProcedureRegistry
-from timer import Timer
-from decorators import log
+from sara.timer import Timer
+from sara.decorators import log
 
 
 class SaraController:

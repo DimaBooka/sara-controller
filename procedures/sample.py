@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-from decorators import log
+
+from sara.decorators import log
 from procedures.procedure import Procedure
 
 

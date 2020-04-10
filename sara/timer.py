@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from decorators import delay
+from sara.decorators import delay
 
 
 class Timer:

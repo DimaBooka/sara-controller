@@ -3,8 +3,8 @@
 import signal
 import sys
 
-from sara import SaraController
-from decorators import log
+from sara.sara import SaraController
+from sara.decorators import log
 
 
 def signal_handler(cancelling):

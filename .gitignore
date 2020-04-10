@@ -1,2 +1,4 @@
 .env
 .emv
+.idea
+*/**/__pycache__
