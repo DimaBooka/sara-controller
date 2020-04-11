@@ -1,8 +1,7 @@
-pkg-resources==0.0.0
 playsound==1.2.2
 pocketsphinx==0.1.15
 PyAudio==0.2.11
-pycairo==1.19.1
+pycairo==1.18.2
 PyGObject==3.36.0
 ruamel.yaml==0.16.10
 ruamel.yaml.clib==0.2.0

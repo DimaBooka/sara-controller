@@ -45,4 +45,10 @@ and
 
 ---
 
+For RaspberryPI
+
+```sudo apt-get install python-gst-1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-tools```
+
+---
+
 <a href="https://github.com/Uberi/speech_recognition">GIT SpeechRecognition</a>
