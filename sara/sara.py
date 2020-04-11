@@ -40,7 +40,7 @@ class SaraController:
             return
 
         # detect procedures
-        self.detect_procedure(phrase)
+        self.detect_and_run_procedure(phrase)
 
     def recognize_phrase(self, audio):
         phrase = ''
