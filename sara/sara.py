@@ -18,7 +18,7 @@ class SaraController:
         self.timer = Timer()
         self.activated = False
         self.recognizer = sr.Recognizer()
-        self.procedures = ProcedureRegistry(language).get_registry()
+        self.procedures = ProcedureRegistry(language)
         self.listen()
 
     @log('Sara waiting to be activated')
@@ -73,9 +73,10 @@ class SaraController:
         self.activated = False
         # self.play_sound(Melody.DEACTIVATING)
 
-    def detect_procedure(self, phrase):
-        for p in self.procedures:
-            if p.activator in phrase:
-                p.procedure.proceed()
-                # self.play_sound(Melody.RUN_PROCEED)
-                self.play_sound(Melody.ACTIVATING)
+    def detect_and_run_procedure(self, phrase):
+        procedures = self.procedures.detect_procedures(phrase)
+
+        for p in procedures:
+            p.proceed()
+            # self.play_sound(Melody.RUN_PROCEED)
+            self.play_sound(Melody.ACTIVATING)

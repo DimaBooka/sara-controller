@@ -28,3 +28,12 @@ class ProcedureRegistry:
 
     def get_registry(self):
         return self.procedure_registry
+
+    def detect_procedures(self, phrase):
+        procedures = []
+
+        for p in self.procedure_registry:
+            if p.activator in phrase:
+                procedures.append(p.procedure)
+
+        return procedures
