@@ -13,7 +13,7 @@ class Procedure(ABC):
         return {}
 
     @abstractmethod
-    def proceed(self):
+    def proceed(self, phrase):
         pass
 
     def get_activators(self, lang):

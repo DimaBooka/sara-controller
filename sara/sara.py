@@ -77,6 +77,6 @@ class SaraController:
         procedures = self.procedures.detect_procedures(phrase)
 
         for p in procedures:
-            p.proceed()
+            p.proceed(phrase)
             # self.play_sound(Melody.RUN_PROCEED)
             self.play_sound(Melody.ACTIVATING)

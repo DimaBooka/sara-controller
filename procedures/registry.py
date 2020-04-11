@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from procedures.sample import SampleProcedure
+from procedures.lgtv import LGTVProcedure
 
 
 class Register:
@@ -13,7 +13,7 @@ class ProcedureRegistry:
 
     def __init__(self, language):
         self.procedure_registry = []
-        self.add_to_registry(SampleProcedure, language)
+        self.add_to_registry(LGTVProcedure, language)
 
     def add_to_registry(self, procedure, language):
         p = procedure()
