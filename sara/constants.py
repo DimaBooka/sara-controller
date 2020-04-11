@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from sara.language import EN, RU
+from sara.language import EN, RU, UA
 
 SARA_ACTIVATOR = 'SARA ACTIVATOR'
 
@@ -10,7 +10,10 @@ languages = {
     },
     RU: {
         SARA_ACTIVATOR: 'привет сара',
-    }
+    },
+    UA: {
+        SARA_ACTIVATOR: 'привіт сара',
+    },
 }
 
 

@@ -8,9 +8,9 @@ and say "Hey, Sara!"
 
 To change the language use 'ln' flag:
 
-```python main.py -ln=ru```
+```python main.py -ln=ua```
 
-By default 'en'. Supported languages: [ru, en]
+By default 'en'. Supported languages: [ru, ua, en]
 
 ---
 

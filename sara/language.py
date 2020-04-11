@@ -2,10 +2,12 @@
 
 EN = 'en-US'
 RU = 'ru-RU'
+UA = 'uk-UA'
 
 languages = {
     'en': EN,
-    'ru': RU
+    'ru': RU,
+    'ua': UA
 }
 
 language = 'en-US'
