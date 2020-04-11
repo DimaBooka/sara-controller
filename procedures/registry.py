@@ -11,14 +11,19 @@ class Register:
 
 class ProcedureRegistry:
 
-    def __init__(self):
+    def __init__(self, language):
         self.procedure_registry = []
-        self.add_to_registry(SampleProcedure)
+        self.add_to_registry(SampleProcedure, language)
 
-    def add_to_registry(self, procedure):
+    def add_to_registry(self, procedure, language):
         p = procedure()
+        activators, err = p.get_activators(language)
 
-        for a in procedure.activators:
+        if err:
+            print('Error[Procedure: %s]: %s.' % (procedure.procedure_name, err))
+            return
+
+        for a in activators:
             self.procedure_registry.append(Register(a, p))
 
     def get_registry(self):

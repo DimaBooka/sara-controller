@@ -6,6 +6,12 @@ To run it, just type:
 
 and say "Hey, Sara!"
 
+To change the language use 'ln' flag:
+
+```python main.py -ln=ru```
+
+By default 'en'. Supported languages: [ru, en]
+
 ---
 
 Requirements:

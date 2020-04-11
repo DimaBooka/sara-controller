@@ -3,7 +3,7 @@
 import speech_recognition as sr
 from playsound import playsound
 
-from sara.constants import Melody, Phrase
+from sara.constants import Melody, get_constants, SARA_ACTIVATOR
 from procedures.registry import ProcedureRegistry
 from sara.timer import Timer
 from sara.decorators import log
@@ -12,11 +12,13 @@ from sara.decorators import log
 class SaraController:
     cancelling = None
 
-    def __init__(self):
+    def __init__(self, language):
+        self.language = language
+        self.constants = get_constants(language)
         self.timer = Timer()
         self.activated = False
         self.recognizer = sr.Recognizer()
-        self.procedures = ProcedureRegistry().get_registry()
+        self.procedures = ProcedureRegistry(language).get_registry()
         self.listen()
 
     @log('Sara waiting to be activated')
@@ -31,7 +33,7 @@ class SaraController:
     def callback(self, recognizer, sound):
         phrase = self.recognize_phrase(sound)
 
-        if Phrase.HEY_SARA in phrase:
+        if self.constants[SARA_ACTIVATOR] in phrase:
             self.activate()
 
         if not self.activated:
@@ -45,7 +47,7 @@ class SaraController:
 
         # received audio data, now we'll recognize it using Google Speech Recognition
         try:
-            phrase = self.recognizer.recognize_google(audio)
+            phrase = self.recognizer.recognize_google(audio, language=self.language)
             print("Recognized phrase: " + phrase)
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")
