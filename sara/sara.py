@@ -28,7 +28,7 @@ class SaraController:
             # we only need to calibrate once, before we start listening
             self.recognizer.adjust_for_ambient_noise(source)
 
-        self.cancelling = self.recognizer.listen_in_background(m, self.callback)
+        self.cancelling = self.recognizer.listen_in_background(m, self.callback, 5)
 
     def callback(self, recognizer, sound):
         phrase = self.recognize_phrase(sound)
