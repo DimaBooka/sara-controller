@@ -3,7 +3,7 @@
 import speech_recognition as sr
 from playsound import playsound
 
-from sara.constants import Melody, get_constants, SARA_ACTIVATOR
+from sara.constants import Melody, constants, SARA_ACTIVATOR
 from procedures.registry import ProcedureRegistry
 from sara.timer import Timer
 from sara.decorators import log
@@ -13,7 +13,6 @@ class SaraController:
     cancelling = None
 
     def __init__(self):
-        self.constants = get_constants()
         self.timer = Timer()
         self.activated = False
         self.recognizer = sr.Recognizer()
@@ -32,7 +31,7 @@ class SaraController:
     def callback(self, recognizer, sound):
         phrase = self.recognize_phrase(sound)
 
-        if self.constants[SARA_ACTIVATOR] in phrase:
+        if constants[SARA_ACTIVATOR] in phrase:
             self.activate()
 
         if not self.activated:

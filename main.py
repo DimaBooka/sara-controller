@@ -5,7 +5,6 @@ import signal
 import sys
 
 from procedures.registry import ProcedureRegistry
-from sara.language import get_language, set_language
 from sara.sara import SaraController
 from sara.decorators import log
 
@@ -24,7 +23,6 @@ def signal_handler(cancelling):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Sara arguments')
-    # parser.add_argument('-ln', nargs='?', default='en', help='russian language')
     parser.add_argument('-cmd', nargs='?', default='', help='procedure activator')
 
     return parser.parse_args()
@@ -46,12 +44,15 @@ def run_sara():
     signal.pause()
 
 
-if __name__ == '__main__':
+def main():
     args = parse_args()
-    # set_language(args.ln)
-    # language = get_language()
 
     if args.cmd:
         run_command(args.cmd)
-    else:
-        run_sara()
+        return
+
+    run_sara()
+
+
+if __name__ == '__main__':
+    main()
