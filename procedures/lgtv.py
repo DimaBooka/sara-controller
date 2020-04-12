@@ -23,7 +23,7 @@ class LGTVProcedure(Procedure):
             'turn on tv': lambda: self.__on(),
             'turn off tv': lambda: self.__run("lgtv %s off" % LGTV_NAME),
             'open youtube on tv': lambda: self.__run("lgtv %s startApp 'youtube.leanback.v4'" % LGTV_NAME),
-            'open netflix on tv': lambda: self.__run("lgtv %s startApp 'netflix.leanback.v4'" % LGTV_NAME),
+            'open netflix on tv': lambda: self.__run("lgtv %s startApp 'netflix'" % LGTV_NAME),
             'open films on tv': lambda: self.__run("lgtv %s openBrowserAt 'https://rezka.ag/films/'" % LGTV_NAME)
         }
 
