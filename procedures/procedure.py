@@ -16,7 +16,5 @@ class Procedure(ABC):
     def proceed(self, phrase):
         pass
 
-    def get_activators(self, lang):
-        if lang in self.activators:
-            return self.activators[lang], None
-        return None, 'language is not supported'
+    def get_activators(self):
+        return self.activators

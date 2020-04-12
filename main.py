@@ -24,22 +24,22 @@ def signal_handler(cancelling):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Sara arguments')
-    parser.add_argument('-ln', nargs='?', default='en', help='russian language')
+    # parser.add_argument('-ln', nargs='?', default='en', help='russian language')
     parser.add_argument('-cmd', nargs='?', default='', help='procedure activator')
 
     return parser.parse_args()
 
 
-def run_command(ln, command):
-    r = ProcedureRegistry(ln)
+def run_command(command):
+    r = ProcedureRegistry()
 
     ps = r.detect_procedures(command)
     for p in ps:
         p.proceed(command)
 
 
-def run_sara(ln):
-    sara = SaraController(ln)
+def run_sara():
+    sara = SaraController()
 
     signal.signal(signal.SIGINT, signal_handler(sara.cancelling))
     print('Press Ctrl+C')
@@ -48,10 +48,10 @@ def run_sara(ln):
 
 if __name__ == '__main__':
     args = parse_args()
-    set_language(args.ln)
-    language = get_language()
+    # set_language(args.ln)
+    # language = get_language()
 
     if args.cmd:
-        run_command(language, args.cmd)
+        run_command(args.cmd)
     else:
-        run_sara(language)
+        run_sara()

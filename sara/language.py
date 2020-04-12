@@ -6,8 +6,8 @@ UA = 'uk-UA'
 
 languages = {
     'en': EN,
-    'ru': RU,
-    'ua': UA
+    # 'ru': RU,
+    # 'ua': UA
 }
 
 language = 'en-US'

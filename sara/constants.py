@@ -21,5 +21,5 @@ class Melody:
     ACTIVATING = 'sounds/activating.mp3'
 
 
-def get_constants(language):
+def get_constants(language=EN):
     return languages[language]
