@@ -39,6 +39,7 @@ class LGTVProcedure(Procedure):
         send_magic_packet(self.config[LGTV_NAME]['mac'])
 
     def __run(self, command):
+        self.__on()
         subprocess.call(command, shell=True)
 
     @log('call lgtv proceed')
